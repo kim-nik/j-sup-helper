@@ -35,3 +35,8 @@ export interface ChartConfig {
   };
   data: DataPoint[];
 }
+
+export interface TagCount {
+  tag: string;
+  count: number;
+}

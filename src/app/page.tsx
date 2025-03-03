@@ -1,45 +1,49 @@
-import MainLayout from "@/components/layout/MainLayout";
+import React from "react";
+import Link from "next/link";
 
 export default function Home() {
   return (
-    <MainLayout>
-      <div className="space-y-6">
-        <div className="bg-white shadow rounded-lg p-6">
-          <h2 className="text-xl font-semibold text-gray-900 mb-4">
-            Welcome to Data Analysis Dashboard
-          </h2>
-          <p className="text-gray-600">
-            This dashboard will help you analyze and visualize your data
-            effectively.
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {/* Placeholder for data cards */}
-          <div className="bg-white shadow rounded-lg p-6">
-            <h3 className="text-lg font-medium text-gray-900 mb-2">
-              Data Overview
-            </h3>
-            <p className="text-gray-600">Upload your data to get started</p>
-          </div>
-
-          <div className="bg-white shadow rounded-lg p-6">
-            <h3 className="text-lg font-medium text-gray-900 mb-2">
-              Analysis Results
-            </h3>
-            <p className="text-gray-600">View your analysis results here</p>
-          </div>
-
-          <div className="bg-white shadow rounded-lg p-6">
-            <h3 className="text-lg font-medium text-gray-900 mb-2">
-              Visualizations
-            </h3>
-            <p className="text-gray-600">
-              Your data visualizations will appear here
-            </p>
-          </div>
-        </div>
+    <div className="space-y-8">
+      <div>
+        <h2 className="text-2xl font-bold text-gray-900">
+          Welcome to Data Analysis Dashboard
+        </h2>
+        <p className="mt-2 text-gray-600">
+          Choose a tool from the navigation menu to get started.
+        </p>
       </div>
-    </MainLayout>
+
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <Link
+          href="/tag-counter"
+          className="block p-6 bg-white rounded-lg shadow hover:shadow-md transition-shadow"
+        >
+          <h3 className="text-lg font-medium text-gray-900">Tag Counter</h3>
+          <p className="mt-2 text-sm text-gray-600">
+            Analyze and count HTML tags in your content.
+          </p>
+        </Link>
+
+        <Link
+          href="/data-analyzer"
+          className="block p-6 bg-white rounded-lg shadow hover:shadow-md transition-shadow"
+        >
+          <h3 className="text-lg font-medium text-gray-900">Data Analyzer</h3>
+          <p className="mt-2 text-sm text-gray-600">
+            Upload and analyze your data files.
+          </p>
+        </Link>
+
+        <Link
+          href="/chart-generator"
+          className="block p-6 bg-white rounded-lg shadow hover:shadow-md transition-shadow"
+        >
+          <h3 className="text-lg font-medium text-gray-900">Chart Generator</h3>
+          <p className="mt-2 text-sm text-gray-600">
+            Create beautiful charts from your data.
+          </p>
+        </Link>
+      </div>
+    </div>
   );
 }
